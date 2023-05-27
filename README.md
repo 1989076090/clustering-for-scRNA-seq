@@ -53,7 +53,7 @@ model = model.to(device)
 ```
 
 ```python
-########### training for clustering ###############
+############ Or training the model ###############
 # # Step2 (training model): get graph neibours and training 
 # adjs4GAT_mask, adjs4CL = utils.generateNeibour(cell_matrix)
 
