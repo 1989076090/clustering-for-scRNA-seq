@@ -2,7 +2,11 @@
 
 scGCRC is a graph and contrastive-based representation learning architecture for single-cell RNA-seq data clustering.
 
-Overall architecture of the scGCRC  algorithm pipeline:
+Overall architecture of the scGCRC algorithm pipeline:
+
+![Model](https://github.com/yuchen21-web/clustering-for-scRNA-seq/blob/main/model.png)
+
+scGCRC first construct a relationship graph and adopt a graph attention network to extract the relationship information among cells. Then, two contrastive learning modules are conducted on the cell feature matrix with positive and negative pair cells to learn an accurate cell representation. In particular, a cell-level module maximizes the similarity of similar cells (positive pair) and minimizes the similarity of negative pairs to make cells more discriminative. A cluster-level module is used to form cell groups and perform contrastive learning to increase the probability of similar cells to be on the same group. Finally, Leiden algorithm is adopted to cluster cells based on the learned cell representation.
 
 # Requirements
 
@@ -21,7 +25,7 @@ Overall architecture of the scGCRC  algorithm pipeline:
 
 This is a running guide for scGCRC to perform clustering. Moreover, we provided a saved trained model and Klein dataset to verify the effectiveness of the paper.
 
-## 1. Follow the procedure below to perform scGCRC with the jupyter or on [tutorial_CLImpte.ipynb](None)
+## 1. Follow the procedure below to perform scGCRC with the jupyter or on [tutorial_CLImpte.ipynb](https://github.com/yuchen21-web/clustering-for-scRNA-seq/blob/main/src/tutorial_scGCRC.ipynb)
 
 ### 1.1 Perform CL-Impute with the jupyter notebook
 
@@ -114,6 +118,7 @@ plt.ylim(-10.0, 20.0)
 plt.xlim(-10.0, 20.0)
 plt.show()
 ```
+![jupyterNotebook](https://github.com/yuchen21-web/clustering-for-scRNA-seq/blob/main/jupyterNotebook.png)
 
 ## 2. Run Impute.py program directly
 
