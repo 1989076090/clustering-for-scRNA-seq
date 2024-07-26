@@ -88,7 +88,7 @@ def ClusteringWithClusters(hidden, n_cluster):
 
 
 
-def generateNeibour(features, args, k_GAT=100, k_CL=20, pca_path=None):
+def generateNeibour(features, k_GAT=100, k_CL=20, pca_path=None):
 
     if pca_path is not None:
         print('loading saved PCA data')
