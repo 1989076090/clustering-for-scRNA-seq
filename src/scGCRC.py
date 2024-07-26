@@ -13,7 +13,7 @@ if __name__ == '__main__':
 
     # Step2: get graph neibours
     pca_path = 'dataset/' + dataset_name + '/pca_data'
-    adjs4GAT_mask, adjs4CL = utils.generateNeibour(cell_matrix, pca_path)
+    adjs4GAT_mask, adjs4CL = utils.generateNeibour(cell_matrix, pca_path=pca_path)
 
     # Step3: training model
     X = torch.FloatTensor(utils.normalization(cell_matrix)).to(device)
