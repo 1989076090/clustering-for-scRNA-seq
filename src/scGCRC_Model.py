@@ -70,7 +70,6 @@ class GraphSelfAttention(nn.Module):
 
     def save_model(self, file_name):
         torch.save(self.cpu().state_dict(), file_name)
-        self.to(self.args.device)
 
     def load_model(self, path):
         self.load_state_dict(torch.load(path))
@@ -117,7 +116,6 @@ class CLNetwork(nn.Module):
 
     def save_model(self, file_name):
         torch.save(self.cpu().state_dict(), file_name)
-        self.to(self.args.device)
 
     def load_model(self, path):
         self.load_state_dict(torch.load(path))
